@@ -2,6 +2,7 @@ import { IDisciplinaRepository } from "../data/irepository";
 import { Disciplina } from "../domain/model/disciplina";
 import { DisciplinaUseCase } from "../domain/usecases/disciplinausecase";
 
+
 class StubRepo implements IDisciplinaRepository {
     async create(disciplina: Disciplina): Promise< Disciplina | Error> {
         throw new Error("Method not implemented.");
@@ -36,7 +37,6 @@ function makeSut() {
     const sut = new DisciplinaUseCase(repo);
     return { sut , repo }
 }
-
 describe('Consulta disciplinas cadastradas', () => {
     test('deve ser capaz de retornar Array contedo todas as diciplinas cadastradas (Quantidade)', async () => {
         // arrange
