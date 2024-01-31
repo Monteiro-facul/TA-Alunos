@@ -1,6 +1,6 @@
 import { IDisciplinaRepository } from "../data/irepository";
 import { Disciplina } from "../domain/model/disciplina";
-import { DisciplinaUseCase } from "../domain/usecases/disciplina";
+import { DisciplinaUseCase } from "../domain/usecases/disciplinausecase";
 
 class StubRepo implements IDisciplinaRepository {
     async create(disciplina: Disciplina): Promise< Disciplina | Error> {

@@ -4,3 +4,5 @@ import { Disciplina } from './../model/disciplina'
 interface IDisciplinasDisponveisAlunoUseCase {
     disciplinasDisponiveis (aluno: Aluno): Promise< Array<Disciplina> | Error >;
 }
+
+export {IDisciplinasDisponveisAlunoUseCase}
