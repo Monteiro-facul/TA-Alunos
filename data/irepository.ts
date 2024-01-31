@@ -1,10 +1,10 @@
 import { Disciplina } from './../domain/model/disciplina'
 
 
-interface IDisciplinaRepository<E> {
-    create(entidade: Partial<E>): Promise<E | Error>;
-    read(id: number): Promise<E | Error>;
-    update(id: number, entidade: Partial<E>): Promise<E | Error>;
+interface IDisciplinaRepository {
+    create(entidade: Partial<Disciplina>): Promise<Disciplina | Error>;
+    read(id: number): Promise<Disciplina | Error>;
+    update(id: number, entidade: Partial<Disciplina>): Promise<Disciplina | Error>;
     delete(id: number): Promise<boolean | Error>;
     listAll(): Promise< Array<Disciplina> | Error >;
 }
