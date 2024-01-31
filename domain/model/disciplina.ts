@@ -3,9 +3,11 @@ class Disciplina{
     nome: string;
     carga_horaria: number;
     pre_requisito: Array<Disciplina>;
-    professor: Professor;
+    professor: string;
     horario: string;
     sala: string;
     vagas: number;
     periodo: number;  
 }
+
+export { Disciplina } 
