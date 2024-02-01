@@ -22,7 +22,7 @@ export class Disciplina{
         this.espera = []
     }
 
-    ordenarPorCr(listaEspera: Aluno[]){
+    static ordenarPorCr(listaEspera: Aluno[]){
         for(let i=0;i<listaEspera.length-1;i++){
             let min = i;
             for(let j=i+1;j<listaEspera.length;j++){
@@ -34,18 +34,19 @@ export class Disciplina{
             listaEspera[i] = listaEspera[min]
             listaEspera[min] = aux;
         }
+        return listaEspera
     }
 
-    solicitarInclusao(aluno: Aluno) {
+    solicitarInscricao(aluno: Aluno) {
         if(this.vagas_disponiveis <= 0){
-            this.ordenarPorCr(this.espera);
+            Disciplina.ordenarPorCr(this.espera);
             return false
         } else {
             if(this.periodo == aluno.periodo || aluno.disciplinas_restantes.length <= 4){
                 return true;
             } else {
                 this.espera.push(aluno)
-                return this.espera.map(e=>e.nome)
+                return this.espera
             }
         }
     }
